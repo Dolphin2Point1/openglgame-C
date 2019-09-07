@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/openglgame.dir/main.cpp.o  -o openglgame ext/glfw/src/libglfw3.a libglad.a /usr/lib/librt.so -lm -ldl /usr/lib/libX11.so -lpthread 
