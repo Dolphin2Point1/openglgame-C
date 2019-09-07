@@ -8,3 +8,9 @@ Makefile
 openglgame.cbp
 cglm.cbp
 openglgame
+CMakeCache.txt
+Makefile
+cmake_install.cmake
+compile_commands.json
+libcglm.a
+libglad.a
