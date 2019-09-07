@@ -45,6 +45,7 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/home/finian/Documents/git/openglgame/ext/glad/include"/>
+					<Add directory="/home/finian/Documents/git/openglgame/ext/stb"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/9.1.0/../../../../include/c++/9.1.0"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/9.1.0/../../../../include/c++/9.1.0/x86_64-pc-linux-gnu"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/9.1.0/../../../../include/c++/9.1.0/backward"/>
@@ -68,6 +69,7 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/home/finian/Documents/git/openglgame/ext/glad/include"/>
+					<Add directory="/home/finian/Documents/git/openglgame/ext/stb"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/9.1.0/../../../../include/c++/9.1.0"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/9.1.0/../../../../include/c++/9.1.0/x86_64-pc-linux-gnu"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/9.1.0/../../../../include/c++/9.1.0/backward"/>
@@ -101,6 +103,7 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/home/finian/Documents/git/openglgame/ext/glad/include"/>
+					<Add directory="/home/finian/Documents/git/openglgame/ext/stb"/>
 					<Add directory="/home/finian/Documents/git/openglgame/ext/glfw/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/9.1.0/../../../../include/c++/9.1.0"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/9.1.0/../../../../include/c++/9.1.0/x86_64-pc-linux-gnu"/>
@@ -125,6 +128,7 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/home/finian/Documents/git/openglgame/ext/glad/include"/>
+					<Add directory="/home/finian/Documents/git/openglgame/ext/stb"/>
 					<Add directory="/home/finian/Documents/git/openglgame/ext/glfw/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/9.1.0/../../../../include/c++/9.1.0"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/9.1.0/../../../../include/c++/9.1.0/x86_64-pc-linux-gnu"/>
@@ -322,7 +326,10 @@
 		<Unit filename="/home/finian/Documents/git/openglgame/ext/glfw/src/xkb_unicode.h">
 			<Option target="glfw"/>
 		</Unit>
-		<Unit filename="/home/finian/Documents/git/openglgame/main.cpp">
+		<Unit filename="/home/finian/Documents/git/openglgame/main.c">
+			<Option target="openglgame"/>
+		</Unit>
+		<Unit filename="/home/finian/Documents/git/openglgame/shaderread.c">
 			<Option target="openglgame"/>
 		</Unit>
 		<Unit filename="/home/finian/Documents/git/openglgame/CMakeLists.txt">

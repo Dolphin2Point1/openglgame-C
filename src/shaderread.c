@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <shaderread.h>
 #include <glad/glad.h>
 
 const char* loadFile(const char* filename) {

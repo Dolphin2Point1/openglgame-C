@@ -80,28 +80,6 @@ install/local/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
-	/usr/bin/cmake-gui -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
@@ -123,6 +101,28 @@ list_install_components:
 list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/cmake-gui -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -183,6 +183,19 @@ openglgame/fast:
 .PHONY : openglgame/fast
 
 #=============================================================================
+# Target rules for targets named cglm
+
+# Build rule for target.
+cglm: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 cglm
+.PHONY : cglm
+
+# fast build rule for target.
+cglm/fast:
+	$(MAKE) -f CMakeFiles/cglm.dir/build.make CMakeFiles/cglm.dir/build
+.PHONY : cglm/fast
+
+#=============================================================================
 # Target rules for targets named uninstall
 
 # Build rule for target.
@@ -207,6 +220,492 @@ glfw: cmake_check_build_system
 glfw/fast:
 	$(MAKE) -f ext/glfw/src/CMakeFiles/glfw.dir/build.make ext/glfw/src/CMakeFiles/glfw.dir/build
 .PHONY : glfw/fast
+
+ext/cglm/src/affine.o: ext/cglm/src/affine.c.o
+
+.PHONY : ext/cglm/src/affine.o
+
+# target to build an object file
+ext/cglm/src/affine.c.o:
+	$(MAKE) -f CMakeFiles/cglm.dir/build.make CMakeFiles/cglm.dir/ext/cglm/src/affine.c.o
+.PHONY : ext/cglm/src/affine.c.o
+
+ext/cglm/src/affine.i: ext/cglm/src/affine.c.i
+
+.PHONY : ext/cglm/src/affine.i
+
+# target to preprocess a source file
+ext/cglm/src/affine.c.i:
+	$(MAKE) -f CMakeFiles/cglm.dir/build.make CMakeFiles/cglm.dir/ext/cglm/src/affine.c.i
+.PHONY : ext/cglm/src/affine.c.i
+
+ext/cglm/src/affine.s: ext/cglm/src/affine.c.s
+
+.PHONY : ext/cglm/src/affine.s
+
+# target to generate assembly for a file
+ext/cglm/src/affine.c.s:
+	$(MAKE) -f CMakeFiles/cglm.dir/build.make CMakeFiles/cglm.dir/ext/cglm/src/affine.c.s
+.PHONY : ext/cglm/src/affine.c.s
+
+ext/cglm/src/bezier.o: ext/cglm/src/bezier.c.o
+
+.PHONY : ext/cglm/src/bezier.o
+
+# target to build an object file
+ext/cglm/src/bezier.c.o:
+	$(MAKE) -f CMakeFiles/cglm.dir/build.make CMakeFiles/cglm.dir/ext/cglm/src/bezier.c.o
+.PHONY : ext/cglm/src/bezier.c.o
+
+ext/cglm/src/bezier.i: ext/cglm/src/bezier.c.i
+
+.PHONY : ext/cglm/src/bezier.i
+
+# target to preprocess a source file
+ext/cglm/src/bezier.c.i:
+	$(MAKE) -f CMakeFiles/cglm.dir/build.make CMakeFiles/cglm.dir/ext/cglm/src/bezier.c.i
+.PHONY : ext/cglm/src/bezier.c.i
+
+ext/cglm/src/bezier.s: ext/cglm/src/bezier.c.s
+
+.PHONY : ext/cglm/src/bezier.s
+
+# target to generate assembly for a file
+ext/cglm/src/bezier.c.s:
+	$(MAKE) -f CMakeFiles/cglm.dir/build.make CMakeFiles/cglm.dir/ext/cglm/src/bezier.c.s
+.PHONY : ext/cglm/src/bezier.c.s
+
+ext/cglm/src/box.o: ext/cglm/src/box.c.o
+
+.PHONY : ext/cglm/src/box.o
+
+# target to build an object file
+ext/cglm/src/box.c.o:
+	$(MAKE) -f CMakeFiles/cglm.dir/build.make CMakeFiles/cglm.dir/ext/cglm/src/box.c.o
+.PHONY : ext/cglm/src/box.c.o
+
+ext/cglm/src/box.i: ext/cglm/src/box.c.i
+
+.PHONY : ext/cglm/src/box.i
+
+# target to preprocess a source file
+ext/cglm/src/box.c.i:
+	$(MAKE) -f CMakeFiles/cglm.dir/build.make CMakeFiles/cglm.dir/ext/cglm/src/box.c.i
+.PHONY : ext/cglm/src/box.c.i
+
+ext/cglm/src/box.s: ext/cglm/src/box.c.s
+
+.PHONY : ext/cglm/src/box.s
+
+# target to generate assembly for a file
+ext/cglm/src/box.c.s:
+	$(MAKE) -f CMakeFiles/cglm.dir/build.make CMakeFiles/cglm.dir/ext/cglm/src/box.c.s
+.PHONY : ext/cglm/src/box.c.s
+
+ext/cglm/src/cam.o: ext/cglm/src/cam.c.o
+
+.PHONY : ext/cglm/src/cam.o
+
+# target to build an object file
+ext/cglm/src/cam.c.o:
+	$(MAKE) -f CMakeFiles/cglm.dir/build.make CMakeFiles/cglm.dir/ext/cglm/src/cam.c.o
+.PHONY : ext/cglm/src/cam.c.o
+
+ext/cglm/src/cam.i: ext/cglm/src/cam.c.i
+
+.PHONY : ext/cglm/src/cam.i
+
+# target to preprocess a source file
+ext/cglm/src/cam.c.i:
+	$(MAKE) -f CMakeFiles/cglm.dir/build.make CMakeFiles/cglm.dir/ext/cglm/src/cam.c.i
+.PHONY : ext/cglm/src/cam.c.i
+
+ext/cglm/src/cam.s: ext/cglm/src/cam.c.s
+
+.PHONY : ext/cglm/src/cam.s
+
+# target to generate assembly for a file
+ext/cglm/src/cam.c.s:
+	$(MAKE) -f CMakeFiles/cglm.dir/build.make CMakeFiles/cglm.dir/ext/cglm/src/cam.c.s
+.PHONY : ext/cglm/src/cam.c.s
+
+ext/cglm/src/curve.o: ext/cglm/src/curve.c.o
+
+.PHONY : ext/cglm/src/curve.o
+
+# target to build an object file
+ext/cglm/src/curve.c.o:
+	$(MAKE) -f CMakeFiles/cglm.dir/build.make CMakeFiles/cglm.dir/ext/cglm/src/curve.c.o
+.PHONY : ext/cglm/src/curve.c.o
+
+ext/cglm/src/curve.i: ext/cglm/src/curve.c.i
+
+.PHONY : ext/cglm/src/curve.i
+
+# target to preprocess a source file
+ext/cglm/src/curve.c.i:
+	$(MAKE) -f CMakeFiles/cglm.dir/build.make CMakeFiles/cglm.dir/ext/cglm/src/curve.c.i
+.PHONY : ext/cglm/src/curve.c.i
+
+ext/cglm/src/curve.s: ext/cglm/src/curve.c.s
+
+.PHONY : ext/cglm/src/curve.s
+
+# target to generate assembly for a file
+ext/cglm/src/curve.c.s:
+	$(MAKE) -f CMakeFiles/cglm.dir/build.make CMakeFiles/cglm.dir/ext/cglm/src/curve.c.s
+.PHONY : ext/cglm/src/curve.c.s
+
+ext/cglm/src/ease.o: ext/cglm/src/ease.c.o
+
+.PHONY : ext/cglm/src/ease.o
+
+# target to build an object file
+ext/cglm/src/ease.c.o:
+	$(MAKE) -f CMakeFiles/cglm.dir/build.make CMakeFiles/cglm.dir/ext/cglm/src/ease.c.o
+.PHONY : ext/cglm/src/ease.c.o
+
+ext/cglm/src/ease.i: ext/cglm/src/ease.c.i
+
+.PHONY : ext/cglm/src/ease.i
+
+# target to preprocess a source file
+ext/cglm/src/ease.c.i:
+	$(MAKE) -f CMakeFiles/cglm.dir/build.make CMakeFiles/cglm.dir/ext/cglm/src/ease.c.i
+.PHONY : ext/cglm/src/ease.c.i
+
+ext/cglm/src/ease.s: ext/cglm/src/ease.c.s
+
+.PHONY : ext/cglm/src/ease.s
+
+# target to generate assembly for a file
+ext/cglm/src/ease.c.s:
+	$(MAKE) -f CMakeFiles/cglm.dir/build.make CMakeFiles/cglm.dir/ext/cglm/src/ease.c.s
+.PHONY : ext/cglm/src/ease.c.s
+
+ext/cglm/src/euler.o: ext/cglm/src/euler.c.o
+
+.PHONY : ext/cglm/src/euler.o
+
+# target to build an object file
+ext/cglm/src/euler.c.o:
+	$(MAKE) -f CMakeFiles/cglm.dir/build.make CMakeFiles/cglm.dir/ext/cglm/src/euler.c.o
+.PHONY : ext/cglm/src/euler.c.o
+
+ext/cglm/src/euler.i: ext/cglm/src/euler.c.i
+
+.PHONY : ext/cglm/src/euler.i
+
+# target to preprocess a source file
+ext/cglm/src/euler.c.i:
+	$(MAKE) -f CMakeFiles/cglm.dir/build.make CMakeFiles/cglm.dir/ext/cglm/src/euler.c.i
+.PHONY : ext/cglm/src/euler.c.i
+
+ext/cglm/src/euler.s: ext/cglm/src/euler.c.s
+
+.PHONY : ext/cglm/src/euler.s
+
+# target to generate assembly for a file
+ext/cglm/src/euler.c.s:
+	$(MAKE) -f CMakeFiles/cglm.dir/build.make CMakeFiles/cglm.dir/ext/cglm/src/euler.c.s
+.PHONY : ext/cglm/src/euler.c.s
+
+ext/cglm/src/frustum.o: ext/cglm/src/frustum.c.o
+
+.PHONY : ext/cglm/src/frustum.o
+
+# target to build an object file
+ext/cglm/src/frustum.c.o:
+	$(MAKE) -f CMakeFiles/cglm.dir/build.make CMakeFiles/cglm.dir/ext/cglm/src/frustum.c.o
+.PHONY : ext/cglm/src/frustum.c.o
+
+ext/cglm/src/frustum.i: ext/cglm/src/frustum.c.i
+
+.PHONY : ext/cglm/src/frustum.i
+
+# target to preprocess a source file
+ext/cglm/src/frustum.c.i:
+	$(MAKE) -f CMakeFiles/cglm.dir/build.make CMakeFiles/cglm.dir/ext/cglm/src/frustum.c.i
+.PHONY : ext/cglm/src/frustum.c.i
+
+ext/cglm/src/frustum.s: ext/cglm/src/frustum.c.s
+
+.PHONY : ext/cglm/src/frustum.s
+
+# target to generate assembly for a file
+ext/cglm/src/frustum.c.s:
+	$(MAKE) -f CMakeFiles/cglm.dir/build.make CMakeFiles/cglm.dir/ext/cglm/src/frustum.c.s
+.PHONY : ext/cglm/src/frustum.c.s
+
+ext/cglm/src/io.o: ext/cglm/src/io.c.o
+
+.PHONY : ext/cglm/src/io.o
+
+# target to build an object file
+ext/cglm/src/io.c.o:
+	$(MAKE) -f CMakeFiles/cglm.dir/build.make CMakeFiles/cglm.dir/ext/cglm/src/io.c.o
+.PHONY : ext/cglm/src/io.c.o
+
+ext/cglm/src/io.i: ext/cglm/src/io.c.i
+
+.PHONY : ext/cglm/src/io.i
+
+# target to preprocess a source file
+ext/cglm/src/io.c.i:
+	$(MAKE) -f CMakeFiles/cglm.dir/build.make CMakeFiles/cglm.dir/ext/cglm/src/io.c.i
+.PHONY : ext/cglm/src/io.c.i
+
+ext/cglm/src/io.s: ext/cglm/src/io.c.s
+
+.PHONY : ext/cglm/src/io.s
+
+# target to generate assembly for a file
+ext/cglm/src/io.c.s:
+	$(MAKE) -f CMakeFiles/cglm.dir/build.make CMakeFiles/cglm.dir/ext/cglm/src/io.c.s
+.PHONY : ext/cglm/src/io.c.s
+
+ext/cglm/src/mat2.o: ext/cglm/src/mat2.c.o
+
+.PHONY : ext/cglm/src/mat2.o
+
+# target to build an object file
+ext/cglm/src/mat2.c.o:
+	$(MAKE) -f CMakeFiles/cglm.dir/build.make CMakeFiles/cglm.dir/ext/cglm/src/mat2.c.o
+.PHONY : ext/cglm/src/mat2.c.o
+
+ext/cglm/src/mat2.i: ext/cglm/src/mat2.c.i
+
+.PHONY : ext/cglm/src/mat2.i
+
+# target to preprocess a source file
+ext/cglm/src/mat2.c.i:
+	$(MAKE) -f CMakeFiles/cglm.dir/build.make CMakeFiles/cglm.dir/ext/cglm/src/mat2.c.i
+.PHONY : ext/cglm/src/mat2.c.i
+
+ext/cglm/src/mat2.s: ext/cglm/src/mat2.c.s
+
+.PHONY : ext/cglm/src/mat2.s
+
+# target to generate assembly for a file
+ext/cglm/src/mat2.c.s:
+	$(MAKE) -f CMakeFiles/cglm.dir/build.make CMakeFiles/cglm.dir/ext/cglm/src/mat2.c.s
+.PHONY : ext/cglm/src/mat2.c.s
+
+ext/cglm/src/mat3.o: ext/cglm/src/mat3.c.o
+
+.PHONY : ext/cglm/src/mat3.o
+
+# target to build an object file
+ext/cglm/src/mat3.c.o:
+	$(MAKE) -f CMakeFiles/cglm.dir/build.make CMakeFiles/cglm.dir/ext/cglm/src/mat3.c.o
+.PHONY : ext/cglm/src/mat3.c.o
+
+ext/cglm/src/mat3.i: ext/cglm/src/mat3.c.i
+
+.PHONY : ext/cglm/src/mat3.i
+
+# target to preprocess a source file
+ext/cglm/src/mat3.c.i:
+	$(MAKE) -f CMakeFiles/cglm.dir/build.make CMakeFiles/cglm.dir/ext/cglm/src/mat3.c.i
+.PHONY : ext/cglm/src/mat3.c.i
+
+ext/cglm/src/mat3.s: ext/cglm/src/mat3.c.s
+
+.PHONY : ext/cglm/src/mat3.s
+
+# target to generate assembly for a file
+ext/cglm/src/mat3.c.s:
+	$(MAKE) -f CMakeFiles/cglm.dir/build.make CMakeFiles/cglm.dir/ext/cglm/src/mat3.c.s
+.PHONY : ext/cglm/src/mat3.c.s
+
+ext/cglm/src/mat4.o: ext/cglm/src/mat4.c.o
+
+.PHONY : ext/cglm/src/mat4.o
+
+# target to build an object file
+ext/cglm/src/mat4.c.o:
+	$(MAKE) -f CMakeFiles/cglm.dir/build.make CMakeFiles/cglm.dir/ext/cglm/src/mat4.c.o
+.PHONY : ext/cglm/src/mat4.c.o
+
+ext/cglm/src/mat4.i: ext/cglm/src/mat4.c.i
+
+.PHONY : ext/cglm/src/mat4.i
+
+# target to preprocess a source file
+ext/cglm/src/mat4.c.i:
+	$(MAKE) -f CMakeFiles/cglm.dir/build.make CMakeFiles/cglm.dir/ext/cglm/src/mat4.c.i
+.PHONY : ext/cglm/src/mat4.c.i
+
+ext/cglm/src/mat4.s: ext/cglm/src/mat4.c.s
+
+.PHONY : ext/cglm/src/mat4.s
+
+# target to generate assembly for a file
+ext/cglm/src/mat4.c.s:
+	$(MAKE) -f CMakeFiles/cglm.dir/build.make CMakeFiles/cglm.dir/ext/cglm/src/mat4.c.s
+.PHONY : ext/cglm/src/mat4.c.s
+
+ext/cglm/src/plane.o: ext/cglm/src/plane.c.o
+
+.PHONY : ext/cglm/src/plane.o
+
+# target to build an object file
+ext/cglm/src/plane.c.o:
+	$(MAKE) -f CMakeFiles/cglm.dir/build.make CMakeFiles/cglm.dir/ext/cglm/src/plane.c.o
+.PHONY : ext/cglm/src/plane.c.o
+
+ext/cglm/src/plane.i: ext/cglm/src/plane.c.i
+
+.PHONY : ext/cglm/src/plane.i
+
+# target to preprocess a source file
+ext/cglm/src/plane.c.i:
+	$(MAKE) -f CMakeFiles/cglm.dir/build.make CMakeFiles/cglm.dir/ext/cglm/src/plane.c.i
+.PHONY : ext/cglm/src/plane.c.i
+
+ext/cglm/src/plane.s: ext/cglm/src/plane.c.s
+
+.PHONY : ext/cglm/src/plane.s
+
+# target to generate assembly for a file
+ext/cglm/src/plane.c.s:
+	$(MAKE) -f CMakeFiles/cglm.dir/build.make CMakeFiles/cglm.dir/ext/cglm/src/plane.c.s
+.PHONY : ext/cglm/src/plane.c.s
+
+ext/cglm/src/project.o: ext/cglm/src/project.c.o
+
+.PHONY : ext/cglm/src/project.o
+
+# target to build an object file
+ext/cglm/src/project.c.o:
+	$(MAKE) -f CMakeFiles/cglm.dir/build.make CMakeFiles/cglm.dir/ext/cglm/src/project.c.o
+.PHONY : ext/cglm/src/project.c.o
+
+ext/cglm/src/project.i: ext/cglm/src/project.c.i
+
+.PHONY : ext/cglm/src/project.i
+
+# target to preprocess a source file
+ext/cglm/src/project.c.i:
+	$(MAKE) -f CMakeFiles/cglm.dir/build.make CMakeFiles/cglm.dir/ext/cglm/src/project.c.i
+.PHONY : ext/cglm/src/project.c.i
+
+ext/cglm/src/project.s: ext/cglm/src/project.c.s
+
+.PHONY : ext/cglm/src/project.s
+
+# target to generate assembly for a file
+ext/cglm/src/project.c.s:
+	$(MAKE) -f CMakeFiles/cglm.dir/build.make CMakeFiles/cglm.dir/ext/cglm/src/project.c.s
+.PHONY : ext/cglm/src/project.c.s
+
+ext/cglm/src/quat.o: ext/cglm/src/quat.c.o
+
+.PHONY : ext/cglm/src/quat.o
+
+# target to build an object file
+ext/cglm/src/quat.c.o:
+	$(MAKE) -f CMakeFiles/cglm.dir/build.make CMakeFiles/cglm.dir/ext/cglm/src/quat.c.o
+.PHONY : ext/cglm/src/quat.c.o
+
+ext/cglm/src/quat.i: ext/cglm/src/quat.c.i
+
+.PHONY : ext/cglm/src/quat.i
+
+# target to preprocess a source file
+ext/cglm/src/quat.c.i:
+	$(MAKE) -f CMakeFiles/cglm.dir/build.make CMakeFiles/cglm.dir/ext/cglm/src/quat.c.i
+.PHONY : ext/cglm/src/quat.c.i
+
+ext/cglm/src/quat.s: ext/cglm/src/quat.c.s
+
+.PHONY : ext/cglm/src/quat.s
+
+# target to generate assembly for a file
+ext/cglm/src/quat.c.s:
+	$(MAKE) -f CMakeFiles/cglm.dir/build.make CMakeFiles/cglm.dir/ext/cglm/src/quat.c.s
+.PHONY : ext/cglm/src/quat.c.s
+
+ext/cglm/src/sphere.o: ext/cglm/src/sphere.c.o
+
+.PHONY : ext/cglm/src/sphere.o
+
+# target to build an object file
+ext/cglm/src/sphere.c.o:
+	$(MAKE) -f CMakeFiles/cglm.dir/build.make CMakeFiles/cglm.dir/ext/cglm/src/sphere.c.o
+.PHONY : ext/cglm/src/sphere.c.o
+
+ext/cglm/src/sphere.i: ext/cglm/src/sphere.c.i
+
+.PHONY : ext/cglm/src/sphere.i
+
+# target to preprocess a source file
+ext/cglm/src/sphere.c.i:
+	$(MAKE) -f CMakeFiles/cglm.dir/build.make CMakeFiles/cglm.dir/ext/cglm/src/sphere.c.i
+.PHONY : ext/cglm/src/sphere.c.i
+
+ext/cglm/src/sphere.s: ext/cglm/src/sphere.c.s
+
+.PHONY : ext/cglm/src/sphere.s
+
+# target to generate assembly for a file
+ext/cglm/src/sphere.c.s:
+	$(MAKE) -f CMakeFiles/cglm.dir/build.make CMakeFiles/cglm.dir/ext/cglm/src/sphere.c.s
+.PHONY : ext/cglm/src/sphere.c.s
+
+ext/cglm/src/vec3.o: ext/cglm/src/vec3.c.o
+
+.PHONY : ext/cglm/src/vec3.o
+
+# target to build an object file
+ext/cglm/src/vec3.c.o:
+	$(MAKE) -f CMakeFiles/cglm.dir/build.make CMakeFiles/cglm.dir/ext/cglm/src/vec3.c.o
+.PHONY : ext/cglm/src/vec3.c.o
+
+ext/cglm/src/vec3.i: ext/cglm/src/vec3.c.i
+
+.PHONY : ext/cglm/src/vec3.i
+
+# target to preprocess a source file
+ext/cglm/src/vec3.c.i:
+	$(MAKE) -f CMakeFiles/cglm.dir/build.make CMakeFiles/cglm.dir/ext/cglm/src/vec3.c.i
+.PHONY : ext/cglm/src/vec3.c.i
+
+ext/cglm/src/vec3.s: ext/cglm/src/vec3.c.s
+
+.PHONY : ext/cglm/src/vec3.s
+
+# target to generate assembly for a file
+ext/cglm/src/vec3.c.s:
+	$(MAKE) -f CMakeFiles/cglm.dir/build.make CMakeFiles/cglm.dir/ext/cglm/src/vec3.c.s
+.PHONY : ext/cglm/src/vec3.c.s
+
+ext/cglm/src/vec4.o: ext/cglm/src/vec4.c.o
+
+.PHONY : ext/cglm/src/vec4.o
+
+# target to build an object file
+ext/cglm/src/vec4.c.o:
+	$(MAKE) -f CMakeFiles/cglm.dir/build.make CMakeFiles/cglm.dir/ext/cglm/src/vec4.c.o
+.PHONY : ext/cglm/src/vec4.c.o
+
+ext/cglm/src/vec4.i: ext/cglm/src/vec4.c.i
+
+.PHONY : ext/cglm/src/vec4.i
+
+# target to preprocess a source file
+ext/cglm/src/vec4.c.i:
+	$(MAKE) -f CMakeFiles/cglm.dir/build.make CMakeFiles/cglm.dir/ext/cglm/src/vec4.c.i
+.PHONY : ext/cglm/src/vec4.c.i
+
+ext/cglm/src/vec4.s: ext/cglm/src/vec4.c.s
+
+.PHONY : ext/cglm/src/vec4.s
+
+# target to generate assembly for a file
+ext/cglm/src/vec4.c.s:
+	$(MAKE) -f CMakeFiles/cglm.dir/build.make CMakeFiles/cglm.dir/ext/cglm/src/vec4.c.s
+.PHONY : ext/cglm/src/vec4.c.s
 
 ext/glad/src/glad.o: ext/glad/src/glad.c.o
 
@@ -235,32 +734,59 @@ ext/glad/src/glad.c.s:
 	$(MAKE) -f CMakeFiles/glad.dir/build.make CMakeFiles/glad.dir/ext/glad/src/glad.c.s
 .PHONY : ext/glad/src/glad.c.s
 
-main.o: main.cpp.o
+src/main.o: src/main.c.o
 
-.PHONY : main.o
+.PHONY : src/main.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/openglgame.dir/build.make CMakeFiles/openglgame.dir/main.cpp.o
-.PHONY : main.cpp.o
+src/main.c.o:
+	$(MAKE) -f CMakeFiles/openglgame.dir/build.make CMakeFiles/openglgame.dir/src/main.c.o
+.PHONY : src/main.c.o
 
-main.i: main.cpp.i
+src/main.i: src/main.c.i
 
-.PHONY : main.i
+.PHONY : src/main.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/openglgame.dir/build.make CMakeFiles/openglgame.dir/main.cpp.i
-.PHONY : main.cpp.i
+src/main.c.i:
+	$(MAKE) -f CMakeFiles/openglgame.dir/build.make CMakeFiles/openglgame.dir/src/main.c.i
+.PHONY : src/main.c.i
 
-main.s: main.cpp.s
+src/main.s: src/main.c.s
 
-.PHONY : main.s
+.PHONY : src/main.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/openglgame.dir/build.make CMakeFiles/openglgame.dir/main.cpp.s
-.PHONY : main.cpp.s
+src/main.c.s:
+	$(MAKE) -f CMakeFiles/openglgame.dir/build.make CMakeFiles/openglgame.dir/src/main.c.s
+.PHONY : src/main.c.s
+
+src/shaderread.o: src/shaderread.c.o
+
+.PHONY : src/shaderread.o
+
+# target to build an object file
+src/shaderread.c.o:
+	$(MAKE) -f CMakeFiles/openglgame.dir/build.make CMakeFiles/openglgame.dir/src/shaderread.c.o
+.PHONY : src/shaderread.c.o
+
+src/shaderread.i: src/shaderread.c.i
+
+.PHONY : src/shaderread.i
+
+# target to preprocess a source file
+src/shaderread.c.i:
+	$(MAKE) -f CMakeFiles/openglgame.dir/build.make CMakeFiles/openglgame.dir/src/shaderread.c.i
+.PHONY : src/shaderread.c.i
+
+src/shaderread.s: src/shaderread.c.s
+
+.PHONY : src/shaderread.s
+
+# target to generate assembly for a file
+src/shaderread.c.s:
+	$(MAKE) -f CMakeFiles/openglgame.dir/build.make CMakeFiles/openglgame.dir/src/shaderread.c.s
+.PHONY : src/shaderread.c.s
 
 # Help Target
 help:
@@ -270,20 +796,78 @@ help:
 	@echo "... depend"
 	@echo "... install/strip"
 	@echo "... install/local"
-	@echo "... glad"
-	@echo "... rebuild_cache"
-	@echo "... openglgame"
-	@echo "... edit_cache"
 	@echo "... install"
 	@echo "... list_install_components"
+	@echo "... glad"
+	@echo "... openglgame"
+	@echo "... rebuild_cache"
+	@echo "... cglm"
+	@echo "... edit_cache"
 	@echo "... uninstall"
 	@echo "... glfw"
+	@echo "... ext/cglm/src/affine.o"
+	@echo "... ext/cglm/src/affine.i"
+	@echo "... ext/cglm/src/affine.s"
+	@echo "... ext/cglm/src/bezier.o"
+	@echo "... ext/cglm/src/bezier.i"
+	@echo "... ext/cglm/src/bezier.s"
+	@echo "... ext/cglm/src/box.o"
+	@echo "... ext/cglm/src/box.i"
+	@echo "... ext/cglm/src/box.s"
+	@echo "... ext/cglm/src/cam.o"
+	@echo "... ext/cglm/src/cam.i"
+	@echo "... ext/cglm/src/cam.s"
+	@echo "... ext/cglm/src/curve.o"
+	@echo "... ext/cglm/src/curve.i"
+	@echo "... ext/cglm/src/curve.s"
+	@echo "... ext/cglm/src/ease.o"
+	@echo "... ext/cglm/src/ease.i"
+	@echo "... ext/cglm/src/ease.s"
+	@echo "... ext/cglm/src/euler.o"
+	@echo "... ext/cglm/src/euler.i"
+	@echo "... ext/cglm/src/euler.s"
+	@echo "... ext/cglm/src/frustum.o"
+	@echo "... ext/cglm/src/frustum.i"
+	@echo "... ext/cglm/src/frustum.s"
+	@echo "... ext/cglm/src/io.o"
+	@echo "... ext/cglm/src/io.i"
+	@echo "... ext/cglm/src/io.s"
+	@echo "... ext/cglm/src/mat2.o"
+	@echo "... ext/cglm/src/mat2.i"
+	@echo "... ext/cglm/src/mat2.s"
+	@echo "... ext/cglm/src/mat3.o"
+	@echo "... ext/cglm/src/mat3.i"
+	@echo "... ext/cglm/src/mat3.s"
+	@echo "... ext/cglm/src/mat4.o"
+	@echo "... ext/cglm/src/mat4.i"
+	@echo "... ext/cglm/src/mat4.s"
+	@echo "... ext/cglm/src/plane.o"
+	@echo "... ext/cglm/src/plane.i"
+	@echo "... ext/cglm/src/plane.s"
+	@echo "... ext/cglm/src/project.o"
+	@echo "... ext/cglm/src/project.i"
+	@echo "... ext/cglm/src/project.s"
+	@echo "... ext/cglm/src/quat.o"
+	@echo "... ext/cglm/src/quat.i"
+	@echo "... ext/cglm/src/quat.s"
+	@echo "... ext/cglm/src/sphere.o"
+	@echo "... ext/cglm/src/sphere.i"
+	@echo "... ext/cglm/src/sphere.s"
+	@echo "... ext/cglm/src/vec3.o"
+	@echo "... ext/cglm/src/vec3.i"
+	@echo "... ext/cglm/src/vec3.s"
+	@echo "... ext/cglm/src/vec4.o"
+	@echo "... ext/cglm/src/vec4.i"
+	@echo "... ext/cglm/src/vec4.s"
 	@echo "... ext/glad/src/glad.o"
 	@echo "... ext/glad/src/glad.i"
 	@echo "... ext/glad/src/glad.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
+	@echo "... src/shaderread.o"
+	@echo "... src/shaderread.i"
+	@echo "... src/shaderread.s"
 .PHONY : help
 
 
