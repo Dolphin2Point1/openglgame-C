@@ -25,7 +25,7 @@ target_link_libraries(openglgame glad)
 include_directories(ext/stb)
 
 project(cglm C)
-add_library(cglm SHARED ext/cglm/src/euler.c
+add_library(cglm ext/cglm/src/euler.c
 ext/cglm/src/affine.c
 ext/cglm/src/io.c
 ext/cglm/src/quat.c
