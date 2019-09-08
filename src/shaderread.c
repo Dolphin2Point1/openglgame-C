@@ -16,8 +16,6 @@ const char* loadFile(const char* filename) {
     const char* filestring = malloc(filesize + 1);
     fread(filestring, 1, filesize, file);
     fclose(file);
-    free(file);
-    free(&filesize);
     return filestring;
 }
 
@@ -59,5 +57,26 @@ unsigned int makeAndLinkVF(const char* vertexSourceFile, const char* fragmentSou
     unsigned int vertex = compileShader(vertexSource, GL_VERTEX_SHADER);
     unsigned int fragment = compileShader(fragmentSource, GL_FRAGMENT_SHADER);
 
+    unsigned int shaderProgram;
+    shaderProgram = glCreateProgram();
 
+    glAttachShader(shaderProgram, vertex);
+    glAttachShader(shaderProgram, vertex);
+    glLinkProgram(shaderProgram);
+
+    int success;
+    glGetProgramiv(shaderProgram, GL_LINK_STATUS, &success);
+    if(!success) {
+
+        char infoLog[512];
+        glGetProgramInfoLog(shaderProgram, 512, NULL, infoLog);
+
+        printf("ERROR: LINKING FAILED. ERROR: \n\"%s\"\n", infoLog);
+
+    }
+
+    glDeleteShader(vertex);
+    glDeleteShader(fragment);
+
+    return shaderProgram;
 }
