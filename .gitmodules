@@ -8,3 +8,6 @@
 	path = ext/cglm
 	url = git@github.com:recp/cglm.git
 	branch = vec2_mat2
+[submodule "ext/glm"]
+	path = ext/glm
+	url = git@github.com:g-truc/glm.git

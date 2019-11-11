@@ -1,49 +1,42 @@
 cmake_minimum_required(VERSION 3.15)
-project(openglgame C)
+set(CMAKE_CXX_STANDARD 20)
+project(openglgame)
+
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-add_executable(openglgame src/main.c src/shaderread.c)
+add_executable(openglgame src/main.cpp src/ALMasterController.cpp)
 
 set(GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)
 set(GLFW_BUILD_TESTS OFF CACHE BOOL "" FORCE)
 set(GLFW_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
 
 add_subdirectory(ext/glfw)
-
 target_link_libraries(openglgame glfw)
+
+option(GLM_TEST_ENABLE_CXX_98 ON FORCE)
+option(GLM_TEST_ENABLE_CXX_11 ON FORCE)
+option(GLM_TEST_ENABLE_CXX_14 ON FORCE)
+option(GLM_TEST_ENABLE_CXX_17 ON FORCE)
+option(GLM_TEST_ENABLE_CXX_20 ON FORCE)
+add_subdirectory(ext/glm)
+target_link_libraries(openglgame)
 
 find_package(OpenGL REQUIRED)
 
 target_include_directories(openglgame PUBLIC ${OPENGL_INCLUDE_DIR})
 target_link_libraries(openglgame ${OPENGL_gl_LIBRARY})
 
+find_package(OpenAL REQUIRED)
+
+target_link_libraries(openglgame ${OPENAL_LIBRARY})
+include_directories(openglgame ${OPENAL_INCLUDE_DIR})
+
 include_directories(ext/glad/include)
-add_library(glad ext/glad/src/glad.c)
+add_library(glad ext/glad/src/glad.c include/Mesh.h include/ALMasterController.h)
 target_link_libraries(openglgame glad)
 
-include_directories(ext/stb)
 
-project(cglm C)
-add_library(cglm ext/cglm/src/euler.c
-ext/cglm/src/affine.c
-ext/cglm/src/io.c
-ext/cglm/src/quat.c
-ext/cglm/src/cam.c
-ext/cglm/src/vec3.c
-ext/cglm/src/vec4.c
-ext/cglm/src/mat3.c
-ext/cglm/src/mat4.c
-ext/cglm/src/plane.c
-ext/cglm/src/frustum.c
-ext/cglm/src/box.c
-ext/cglm/src/project.c
-ext/cglm/src/sphere.c
-ext/cglm/src/ease.c
-ext/cglm/src/curve.c
-ext/cglm/src/bezier.c
-ext/cglm/src/mat2.c)
-target_link_libraries(openglgame cglm)
-include_directories(ext/cglm/include)
+include_directories(ext/stb)
 
 include_directories(include)
